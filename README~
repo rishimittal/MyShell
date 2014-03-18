@@ -1,0 +1,57 @@
+
+
+						-----------------------
+							README
+						------------------------
+INCLUDED FILES :
+----------------
+1. vprocess.c
+2. internals.c
+3. utilities.c
+4. .history
+5. makefile
+6. pHeader.h
+7. tempFile.txt(MAY OR MAY NOT)
+8. my_shell (EXECUTABLE)
+
+FULFILLED FUNCTIONALITES:
+-------------------------
+1. Execute all the commands (ls, clear, vi etc.)[SUCCESS]
+---> All external Commands are running properly after forking new process.
+
+2. cd, pwd, export[SUCCESS]
+----> Internal Commands are handled , for this I have defined seperate functions in the
+      the internal.c .
+
+3. Set environment variables stored in configuration file “.shellrc”[SUCCESS]
+----> I have made one .AvgRc(hidden file) which is always loaded at the time of my shell initializations
+      this file is read line by line and all the linea are actually the commands that can run using the 
+      processData().Enviornment variable can be set .
+
+4. Print environment variables using echo command[SUCCESS]
+----> One can easily print the enviornment variables set at the time of the shell initializations, also
+      user can set the enviornment variable using the export command and later on print them.
+
+5. Redirection operators < , > , << , >>[SUCCESS]
+----> All redirecton operators are working alongside each other in a fine way, for implemnting the << operator
+      I have created an file tempfile and that file is then set as the input stream.
+
+6. Support for history and '!' operator[SUCCESS]
+----> history is stored in a .history file line by line , which is displayed using the history command, ! operator also
+      ! followed by the interger ,negative integer and the command, if command is not present in the history it actually 
+      prints the error message else it displays the most recent one ,this is being done by the 2D array and file handling.
+
+7. Pipes “|” (multiple)[SUCCESS]
+----> Mutiple pipes with all external commands and implemented internal Commands are workign fine.
+
+8. Background and foreground functionality : &, fg[SUCCESS]
+---->both & and fg <PID> is implemented successfully
+
+Note :  Commands which are input, after you change the current dir are not reflected in the history , as the .histrory file is
+        made locally , same could be said for the .AvgRc file(shell config file).
+
+thank you
+
+
+Thank You
+
